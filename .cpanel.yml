@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/montaini/repositories/mouse-controller-backend
+    - /bin/cp -r * $DEPLOYPATH
