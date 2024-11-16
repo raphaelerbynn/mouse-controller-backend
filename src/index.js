@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 
 // Generate QR code for a new session
 app.get("/generate-qrcode", async (req, res) => {
-  const sessionId = Math.random().toString(36).substr(2, 9); // Generate unique session ID
+  const sessionId = Math.random().toString(36).substr(2, 9);
   sessions[sessionId] = null; // Initialize session
   const qrCode = await qrcode.toDataURL(`?sessionId=${sessionId}`);
   res.send(`<img src="${qrCode}" width="500" alt="QR Code"/>`);
